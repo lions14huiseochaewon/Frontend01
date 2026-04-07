@@ -35,6 +35,7 @@ function Signup() {
   return (
     <main>
       <h1>회원가입</h1>
+      <div></div>
 
       <section>
         <h2>아이디</h2>
