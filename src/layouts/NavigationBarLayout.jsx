@@ -20,19 +20,38 @@ function NavigationBarLayout() {
           />
 
           <div className="fixed bottom-[170px] left-1/2 z-[100] flex w-[377px] -translate-x-1/2 flex-col overflow-hidden rounded-[10px] bg-[#F7F7F7]">
-            <button
-              type="button"
-              className="h-[57px] w-full border-b border-[#E2E2E2] bg-[#F7F7F7] text-[15px] font-normal text-black"
-            >
+            <label className="relative flex h-[57px] w-full cursor-pointer items-center justify-center border-b border-[#E2E2E2] bg-[#F7F7F7] text-[15px] font-normal text-black">
               사진 찍기
-            </button>
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
 
-            <button
-              type="button"
-              className="h-[57px] w-full bg-[#F7F7F7] text-[15px] font-normal text-black"
-            >
+                  if (file) {
+                    setIsQrMenuOpen(false);
+                  }
+                }}
+              />
+            </label>
+
+            <label className="relative flex h-[57px] w-full cursor-pointer items-center justify-center bg-[#F7F7F7] text-[15px] font-normal text-black">
               사진 보관함
-            </button>
+              <input
+                type="file"
+                accept="image/*"
+                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+
+                  if (file) {
+                    setIsQrMenuOpen(false);
+                  }
+                }}
+              />
+            </label>
           </div>
 
           <button
