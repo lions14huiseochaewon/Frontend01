@@ -111,55 +111,68 @@ function Login() {
   };
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-[402px] bg-[#EEEEEE] px-[37px] pt-[167px]">
-      <img
-        src="/icons/Believe.svg"
-        alt="Believe"
-        className="mx-auto h-auto w-[178px]"
-      />
+    <main className="relative mx-auto min-h-screen w-full max-w-[402px] overflow-hidden bg-white px-[37px] pt-[132px]">
+      <div className="absolute top-0 left-0 h-[300px] w-full bg-gradient-to-b from-[#F4F8FF] to-white" />
 
-      <section className="mt-[84px]">
-        <h2 className="mb-[11px] ml-[16px] text-[15px] font-medium text-[#707070]">
-          이메일
-        </h2>
-
-        <input
-          type="email"
-          placeholder="이메일을 입력하세요."
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-          className="h-[42px] w-full rounded-[10px] border border-[#D9D9D9] bg-[#F4F8FF] px-[15px] text-[15px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
+      <section className="relative flex flex-col items-center">
+        <img
+          src="/icons/Believe.svg"
+          alt="Believe"
+          className="h-auto w-[178px]"
         />
+
+        <p className="mt-[18px] text-center text-[15px] leading-[22px] font-normal text-[#020913]">
+          필요한 물품을 쉽고 빠르게,
+          <br />
+          Believe에서 대여해보세요.
+        </p>
       </section>
 
-      <section className="mt-[26px]">
-        <h2 className="mb-[11px] ml-[16px] text-[15px] font-medium text-[#707070]">
-          비밀번호
-        </h2>
+      <section className="relative mt-[58px] rounded-[28px] bg-white px-[20px] pt-[28px] pb-[26px] shadow-sm ring-1 ring-[#EEF3FB]">
+        <div>
+          <h2 className="mb-[10px] ml-[4px] text-[14px] font-medium text-[#707070]">
+            이메일
+          </h2>
 
-        <input
-          type="password"
-          placeholder="비밀번호를 입력하세요."
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-          className="h-[42px] w-full rounded-[10px] border border-[#D9D9D9] bg-[#F4F8FF] px-[15px] text-[15px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-        />
+          <input
+            type="email"
+            placeholder="이메일을 입력하세요."
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+            className="h-[46px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[15px] text-[15px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+          />
+        </div>
+
+        <div className="mt-[22px]">
+          <h2 className="mb-[10px] ml-[4px] text-[14px] font-medium text-[#707070]">
+            비밀번호
+          </h2>
+
+          <input
+            type="password"
+            placeholder="비밀번호를 입력하세요."
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+            className="h-[46px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[15px] text-[15px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+          />
+        </div>
+
+        <button
+          type="button"
+          onClick={handleLogin}
+          className="mt-[30px] flex h-[46px] w-full items-center justify-center rounded-[23px] bg-[var(--color-main-2)] text-[15px] font-semibold text-white shadow-sm transition outline-none focus:ring-0 focus:outline-none active:translate-y-[1px]"
+        >
+          로그인 →
+        </button>
       </section>
-
-      <button
-        type="button"
-        onClick={handleLogin}
-        className="mt-[38px] flex h-[45px] w-full items-center justify-center rounded-[30px] bg-[var(--color-main-2)] text-[15.723px] font-semibold text-white outline-none focus:ring-0 focus:outline-none"
-      >
-        로그인 →
-      </button>
 
       <button
         type="button"
         onClick={() => navigate("/signup")}
-        className="mt-[23px] block w-full text-center text-[15px] font-medium text-[#707070] outline-none focus:ring-0 focus:outline-none"
+        className="relative mt-[24px] block w-full text-center text-[15px] font-medium text-[#707070] outline-none focus:ring-0 focus:outline-none"
       >
-        회원가입
+        아직 계정이 없나요?{" "}
+        <span className="text-[var(--color-main-2)]">회원가입</span>
       </button>
     </main>
   );

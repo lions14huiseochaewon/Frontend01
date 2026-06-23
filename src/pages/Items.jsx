@@ -395,7 +395,7 @@ function Items() {
           </button>
 
           {isSortOpen && (
-            <div className="absolute top-[40px] left-0 w-[100px] border-x border-b border-[#204470] bg-white text-[16px] font-normal text-black">
+            <div className="absolute top-[46px] left-0 w-[140px] overflow-hidden rounded-[10px] border border-[#DDE7F7] bg-white text-[15px] font-normal text-black shadow-sm">
               {[
                 { value: "popular", label: "대여 많은 순" },
                 { value: "recent", label: "최신 등록 순" },
@@ -410,9 +410,9 @@ function Items() {
                       setSortOption(option.value);
                       setIsSortOpen(false);
                     }}
-                    className={`h-[40px] w-full pl-[10px] text-left outline-none focus:ring-0 focus:outline-none ${
+                    className={`h-[42px] w-full px-[14px] text-left transition outline-none hover:bg-[#F8FAFF] focus:ring-0 focus:outline-none ${
                       index !== array.length - 1
-                        ? "border-b border-[#D9D9D9]"
+                        ? "border-b border-[#EEF3FB]"
                         : ""
                     }`}
                   >
