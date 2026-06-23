@@ -161,171 +161,188 @@ function Signup() {
   };
 
   return (
-    <main className="mx-auto min-h-screen w-full max-w-[402px] bg-[#EEEEEE] px-[37px] pt-[98px] pb-[60px]">
-      <h1 className="mt-[40px] text-[24px] font-normal text-[#020913]">
-        회원가입
-      </h1>
+    <main className="relative mx-auto min-h-screen w-full max-w-[402px] overflow-hidden bg-white px-[37px] pt-[78px] pb-[70px]">
+      <div className="absolute top-0 left-0 h-[260px] w-full bg-gradient-to-b from-[#F4F8FF] to-white" />
 
-      <section className="mt-[61px] flex flex-col gap-[23px]">
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-id"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            아이디
-          </label>
-          <input
-            id="signup-id"
-            type="text"
-            placeholder="아이디를 입력하세요"
-            value={id}
-            onChange={(e) => setId(e.target.value)}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
+      <section className="relative">
+        <h1 className="text-[26px] font-bold text-[#020913]">회원가입</h1>
+      </section>
 
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-email"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            이메일
-          </label>
-          <input
-            id="signup-email"
-            type="email"
-            placeholder="이메일을 입력하세요"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
-
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-password"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            비밀번호
-          </label>
-          <input
-            id="signup-password"
-            type="password"
-            placeholder="비밀번호를 입력하세요"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
-
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-password-confirm"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            비밀번호 확인
-          </label>
-          <input
-            id="signup-password-confirm"
-            type="password"
-            placeholder="비밀번호를 한번 더 입력하세요"
-            value={passwordConfirm}
-            onChange={(e) => setPasswordConfirm(e.target.value)}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
-
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-name"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            이름
-          </label>
-          <input
-            id="signup-name"
-            type="text"
-            placeholder="이름을 입력하세요"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
-
-        <div className="relative flex items-start justify-between">
-          <label
-            htmlFor="signup-department"
-            className="mt-[9px] w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            학과
-          </label>
-
-          <div className="relative w-[213px]">
+      <section className="relative mt-[34px] rounded-[28px] bg-white px-[20px] pt-[26px] pb-[28px] shadow-sm ring-1 ring-[#EEF3FB]">
+        <div className="flex flex-col gap-[18px]">
+          <div>
+            <label
+              htmlFor="signup-id"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              아이디
+            </label>
             <input
-              id="signup-department"
+              id="signup-id"
               type="text"
-              placeholder={isDepartmentListOpen ? "" : "학과 검색"}
-              value={department}
-              onFocus={() => setIsDepartmentListOpen(true)}
-              onBlur={() => {
-                if (!department.trim()) {
-                  setIsDepartmentListOpen(false);
-                }
-              }}
-              onChange={(e) => {
-                setDepartment(e.target.value);
-                setIsDepartmentListOpen(true);
-              }}
-              className="h-[34px] w-full rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
+              placeholder="아이디를 입력하세요"
+              value={id}
+              onChange={(e) => setId(e.target.value)}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
             />
+          </div>
 
-            {isDepartmentListOpen &&
-              department.trim() &&
-              filteredDepartments.length > 0 && (
-                <div className="absolute top-[39px] left-0 z-30 max-h-[150px] w-full overflow-y-auto rounded-[6px] border border-[#D9D9D9] bg-white shadow-sm">
-                  {filteredDepartments.map((item) => (
-                    <button
-                      key={item}
-                      type="button"
-                      onMouseDown={() => {
-                        setDepartment(item);
-                        setIsDepartmentListOpen(false);
-                      }}
-                      className="block h-[30px] w-full px-[12px] text-left text-[12px] text-[#020913] hover:bg-[#F4F8FF]"
-                    >
-                      {item}
-                    </button>
-                  ))}
-                </div>
-              )}
+          <div>
+            <label
+              htmlFor="signup-email"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              이메일
+            </label>
+            <input
+              id="signup-email"
+              type="email"
+              placeholder="이메일을 입력하세요"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="signup-password"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              비밀번호
+            </label>
+            <input
+              id="signup-password"
+              type="password"
+              placeholder="비밀번호를 입력하세요"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="signup-password-confirm"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              비밀번호 확인
+            </label>
+            <input
+              id="signup-password-confirm"
+              type="password"
+              placeholder="비밀번호를 한번 더 입력하세요"
+              value={passwordConfirm}
+              onChange={(e) => setPasswordConfirm(e.target.value)}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="signup-name"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              이름
+            </label>
+            <input
+              id="signup-name"
+              type="text"
+              placeholder="이름을 입력하세요"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+            />
+          </div>
+
+          <div>
+            <label
+              htmlFor="signup-department"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              학과
+            </label>
+
+            <div className="relative">
+              <input
+                id="signup-department"
+                type="text"
+                placeholder={isDepartmentListOpen ? "" : "학과 검색"}
+                value={department}
+                onFocus={() => setIsDepartmentListOpen(true)}
+                onBlur={() => {
+                  if (!department.trim()) {
+                    setIsDepartmentListOpen(false);
+                  }
+                }}
+                onChange={(e) => {
+                  setDepartment(e.target.value);
+                  setIsDepartmentListOpen(true);
+                }}
+                className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+              />
+
+              {isDepartmentListOpen &&
+                department.trim() &&
+                filteredDepartments.length > 0 && (
+                  <div className="absolute top-[50px] left-0 z-30 max-h-[158px] w-full overflow-y-auto rounded-[14px] border border-[#DDE7F7] bg-white text-[13px] shadow-sm">
+                    {filteredDepartments.map((item, index) => (
+                      <button
+                        key={item}
+                        type="button"
+                        onMouseDown={() => {
+                          setDepartment(item);
+                          setIsDepartmentListOpen(false);
+                        }}
+                        className={`block h-[36px] w-full px-[14px] text-left text-[#020913] transition outline-none hover:bg-[#F8FAFF] focus:ring-0 focus:outline-none ${
+                          index !== filteredDepartments.length - 1
+                            ? "border-b border-[#EEF3FB]"
+                            : ""
+                        }`}
+                      >
+                        {item}
+                      </button>
+                    ))}
+                  </div>
+                )}
+            </div>
+          </div>
+
+          <div>
+            <label
+              htmlFor="signup-phone"
+              className="mb-[8px] ml-[4px] block text-[13px] font-medium text-[#707070]"
+            >
+              전화번호
+            </label>
+            <input
+              id="signup-phone"
+              type="text"
+              inputMode="numeric"
+              placeholder="전화번호를 입력하세요"
+              value={phone}
+              onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
+              className="h-[44px] w-full rounded-[14px] border border-[#DDE7F7] bg-[#F8FAFF] px-[14px] text-[14px] text-[#020913] shadow-sm outline-none placeholder:text-[#B3B3B3] focus:border-[var(--color-main-2)] focus:ring-0 focus:outline-none"
+            />
           </div>
         </div>
 
-        <div className="flex items-center justify-between">
-          <label
-            htmlFor="signup-phone"
-            className="w-[72px] text-[13px] font-normal text-[#545454]"
-          >
-            전화번호
-          </label>
-          <input
-            id="signup-phone"
-            type="text"
-            inputMode="numeric"
-            placeholder="전화번호를 입력하세요"
-            value={phone}
-            onChange={(e) => setPhone(formatPhoneNumber(e.target.value))}
-            className="h-[34px] w-[213px] rounded-[6px] border border-[#D9D9D9] bg-[#F4F8FF] px-[12px] text-[12px] text-[#020913] outline-none placeholder:text-[#B3B3B3] focus:ring-0 focus:outline-none"
-          />
-        </div>
+        <button
+          type="button"
+          onClick={handleSignup}
+          className="mt-[30px] flex h-[46px] w-full items-center justify-center rounded-[23px] bg-[var(--color-main-2)] text-[15px] font-semibold text-white shadow-sm transition outline-none focus:ring-0 focus:outline-none active:translate-y-[1px]"
+        >
+          가입 완료 →
+        </button>
       </section>
 
       <button
         type="button"
-        onClick={handleSignup}
-        className="mt-[38px] flex h-[45px] w-full items-center justify-center rounded-[30px] bg-[var(--color-main-2)] text-[15px] font-normal text-white outline-none focus:ring-0 focus:outline-none"
+        onClick={() => navigate("/login")}
+        className="relative mt-[24px] block w-full text-center text-[15px] font-medium text-[#707070] outline-none focus:ring-0 focus:outline-none"
       >
-        가입 완료 →
+        이미 계정이 있나요?{" "}
+        <span className="text-[var(--color-main-2)]">로그인</span>
       </button>
     </main>
   );
