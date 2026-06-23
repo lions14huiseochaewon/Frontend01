@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import useToastStore from "../store/useToastStore";
 import Home from "./Home";
+import Items from "./Items";
+import MyPage from "./MyPage";
 
 function QRRental() {
   const navigate = useNavigate();
+  const location = useLocation();
+  const backgroundPath =
+    location.state?.backgroundPath ||
+    sessionStorage.getItem("qrBackgroundPath") ||
+    "/home";
   const [step, setStep] = useState("select");
   const showToast = useToastStore((state) => state.showToast);
 
@@ -12,6 +19,22 @@ function QRRental() {
   const year = today.getFullYear();
   const month = today.getMonth() + 1;
   const date = today.getDate();
+
+  const renderBackgroundPage = () => {
+    if (backgroundPath.startsWith("/items")) {
+      return <Items />;
+    }
+
+    if (backgroundPath.startsWith("/mypage")) {
+      return <MyPage />;
+    }
+
+    return <Home />;
+  };
+
+  const handleCancel = () => {
+    navigate(backgroundPath);
+  };
 
   useEffect(() => {
     if (step === "done") {
@@ -23,9 +46,7 @@ function QRRental() {
   if (step === "select") {
     return (
       <main className="relative mx-auto h-[874px] w-[402px] overflow-hidden">
-        <div className="pointer-events-none">
-          <Home />
-        </div>
+        <div className="pointer-events-none">{renderBackgroundPage()}</div>
 
         <div className="absolute inset-0 z-40 bg-black/20" />
 
@@ -61,7 +82,7 @@ function QRRental() {
 
         <button
           type="button"
-          onClick={() => navigate("/home")}
+          onClick={handleCancel}
           className="fixed bottom-[30px] left-1/2 z-[100] h-[57px] w-[377px] -translate-x-1/2 rounded-[10px] bg-[#F7F7F7] text-[15px] font-normal text-black"
         >
           취소
