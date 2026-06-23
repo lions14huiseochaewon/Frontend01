@@ -1,0 +1,25 @@
+<svg width="33" height="33" viewBox="0 0 33 33" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_56_5)">
+<path d="M1.17859 0V11.7857" stroke="black" stroke-width="2.35714"/>
+<path d="M33 1.17773H21.2143" stroke="black" stroke-width="2.35714"/>
+<path d="M31.8214 33V21.2143" stroke="black" stroke-width="2.35714"/>
+<path d="M0 31.8223H11.7857" stroke="black" stroke-width="2.35714"/>
+<path d="M11.7858 1.17773H5.24521e-05" stroke="black" stroke-width="2.35714"/>
+<path d="M31.8214 11.7861V0.000418663" stroke="black" stroke-width="2.35714"/>
+<path d="M21.2142 31.8223H32.9999" stroke="black" stroke-width="2.35714"/>
+<path d="M1.17859 21.2139V32.9996" stroke="black" stroke-width="2.35714"/>
+<rect x="8.24998" y="8.25084" width="5.89286" height="5.89286" stroke="black" stroke-width="2.35714"/>
+<rect x="18.8572" y="8.25084" width="5.89286" height="5.89286" stroke="black" stroke-width="2.35714"/>
+<rect x="8.24998" y="18.8563" width="5.89286" height="5.89286" stroke="black" stroke-width="2.35714"/>
+<rect x="17.6786" y="17.6777" width="2.35714" height="2.35714" fill="black"/>
+<rect x="23.5714" y="17.6777" width="2.35714" height="2.35714" fill="black"/>
+<rect x="23.5714" y="23.5723" width="2.35714" height="2.35714" fill="black"/>
+<rect x="17.6786" y="23.5723" width="2.35714" height="2.35714" fill="black"/>
+<rect x="20.625" y="20.625" width="2.35714" height="2.35714" fill="black"/>
+</g>
+<defs>
+<clipPath id="clip0_56_5">
+<rect width="33" height="33" fill="white"/>
+</clipPath>
+</defs>
+</svg>
