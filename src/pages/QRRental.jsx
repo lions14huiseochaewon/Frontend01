@@ -52,25 +52,34 @@ function QRRental() {
 
         <div className="fixed bottom-[101px] left-1/2 z-[100] h-[87px] w-[377px] -translate-x-1/2 rounded-[10px] bg-[#F7F7F7]">
           <div>
-            <button
-              type="button"
-              onClick={() => setStep("confirm")}
-              className="h-[43px] w-full text-[15px] font-normal text-black"
-            >
+            <label className="relative flex h-[43px] w-full cursor-pointer items-center justify-center text-[15px] font-normal text-black">
               사진 찍기
-            </button>
+              <input
+                type="file"
+                accept="image/*"
+                capture="environment"
+                className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
+                onChange={(event) => {
+                  const file = event.target.files?.[0];
+
+                  if (file) {
+                    setStep("confirm");
+                  }
+                }}
+              />
+            </label>
 
             <div className="h-[0.3px] w-full bg-[#D9D9D9]" />
           </div>
 
-          <label className="flex h-[43px] w-full cursor-pointer items-center justify-center text-[15px] font-normal text-black">
+          <label className="relative flex h-[43px] w-full cursor-pointer items-center justify-center text-[15px] font-normal text-black">
             사진 보관함
             <input
               type="file"
               accept="image/*"
-              className="hidden"
+              className="absolute inset-0 h-full w-full cursor-pointer opacity-0"
               onChange={(event) => {
-                const file = event.target.files[0];
+                const file = event.target.files?.[0];
 
                 if (file) {
                   setStep("confirm");

@@ -1051,7 +1051,7 @@ function MyPage() {
               onClick={() => profileFileInputRef.current?.click()}
               className="h-[57px] w-full bg-[#F7F7F7] text-[15px] font-normal text-black outline-none focus:ring-0 focus:outline-none"
             >
-              사진 보관함
+              사진 선택
             </button>
           </div>
 
